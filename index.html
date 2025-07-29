@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Launching Question2 App...</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      function getQueryParam(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+      }
+
+      function openApp() {
+        const param = getQueryParam("param") || "";
+        const deepLink = `myapp://myroute?param=${param}`;
+        const fallbackPlayStore =
+          "https://play.google.com/store/apps/details?id=com.question2";
+
+        // Open deep link
+        window.location.href = deepLink;
+
+        // Fallback to Play Store after delay (in case app is not installed)
+        setTimeout(() => {
+          window.location.href = fallbackPlayStore;
+        }, 2000);
+      }
+
+      window.onload = openApp;
+    </script>
+  </head>
+  <body>
+    <p>Launching the app…</p>
+  </body>
+</html>
