@@ -13,7 +13,7 @@
 
       function openApp() {
         const param = getQueryParam("param") || "";
-        const deepLink = `https://ayushk97.github.io/sharequestion?param=${param}`;
+        const deepLink = `https://ayushk9799.github.io/sharequestion?param=${param}`;
         const fallbackPlayStore =
           "https://play.google.com/store/apps/details?id=com.question2";
 
@@ -21,9 +21,9 @@
         window.location.href = deepLink;
 
         // Fallback to Play Store after delay (in case app is not installed)
-        setTimeout(() => {
-          window.location.href = fallbackPlayStore;
-        }, 2000);
+        // setTimeout(() => {
+        //   window.location.href = fallbackPlayStore;
+        // }, 2000);
       }
 
       window.onload = openApp;
