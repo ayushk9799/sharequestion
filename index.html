@@ -13,12 +13,12 @@
 
       function openApp() {
         const param = getQueryParam("param") || "";
-        const deepLink = `https://ayushk9799.github.io/sharequestion?param=${param}`;
+        const intentLink = `intent://?id=${id}#Intent;scheme=myapp;package=com.question2;end`;
         const fallbackPlayStore =
           "https://play.google.com/store/apps/details?id=com.question2";
 
         // Open deep link
-        window.location.href = deepLink;
+        window.location.href = intentLink;
 
         // Fallback to Play Store after delay (in case app is not installed)
         // setTimeout(() => {
